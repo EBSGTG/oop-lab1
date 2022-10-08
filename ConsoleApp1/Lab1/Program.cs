@@ -1,44 +1,40 @@
-﻿namespace ConsoleApp1.Lab1
+﻿using System;
+using System.Collections.Generic;
+namespace ConsoleApp1.Lab1
 {
     internal class Lab1
     {
-        
-
-         class GameAccount
+        static void Main(string[] args)
         {
+            var p1 = new CreateUser("jopka");
+            var p2 = new CreateUser("jorgik");
+            Console.WriteLine(p1.UserName + " " + p1.GamesCount + " " + p1.CurrentRating);
+            Console.WriteLine(p2.UserName + " " + p2.GamesCount + " " + p2.CurrentRating);
+        }
+
+         class CreateUser
+        {
+            public string UserName {get;}
+            public int  GamesCount {get;}
+            public  int CurrentRating {get;}
             
-             string UserName { get; set; }
-             int GamesCount { get; set; }
-             int CurrentRating { get; set; }
-
-
-            public GameAccount(string name, int games, int rating)
+            public CreateUser(string name)
             {
                 UserName = name;
-                GamesCount = games;
-                CurrentRating = rating;
-                
+                GamesCount = 0;
+                CurrentRating = 100;
+
             }
-            static void Main(string[] args)
-            {
-                GameAccount aw = new GameAccount("jopka", 0, 100);
-                Console.WriteLine(aw.UserName + " " + aw.GamesCount + " " + aw.CurrentRating);
-            }
+        }
+        
+         
+         
+         
             
-            public class WinGame 
-            {
-                
-            }
-
-            public class LoseGame
-            {
-                
-            }
-
             public class GetStats
             {
                 
             }
-        }
+        
     }
 }
