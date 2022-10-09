@@ -49,7 +49,7 @@ namespace ConsoleApp1.Lab1
                     int currentRating = 1000;
                     foreach (var t in allOperations)
                     {
-                        currentRating = t.Rating;
+                        currentRating += t.Rating;
                     }
                     return currentRating;
                 }
@@ -67,7 +67,7 @@ namespace ConsoleApp1.Lab1
                 {
                     throw new InvalidOperationException("Game rating cant be less than 1");
                 }
-                Console.WriteLine(CurrentRating-rating);
+               
                 var loseGame = new Operation(-rating, "Lose", opponentName, 1);
                 allOperations.Add(loseGame);
             }
@@ -148,10 +148,10 @@ namespace ConsoleApp1.Lab1
                 {
                     PlayerOne.WinGame(PlayerTwo.UserName, Rating);
                     PlayerTwo.LoseGame(PlayerOne.UserName, Rating);
-                    Console.WriteLine(PlayerOne.UserName  +" "+ power1 +" power " + " wins " + PlayerTwo.UserName +" "+power2 +" power ");
+                    Console.WriteLine(PlayerOne.UserName  + " " +  power1 +" power " + " wins " + PlayerTwo.UserName +" "+power2 +" power ");
                 }
                 else {
-                    Console.WriteLine(PlayerTwo.UserName  +" " +  power2 +" power " + " wins " + PlayerOne.UserName  +" "+ power1 +" power ");
+                    Console.WriteLine(PlayerTwo.UserName  + " " +  power2 +" power " + " wins " + PlayerOne.UserName  +" "+ power1 +" power ");
                     PlayerTwo.WinGame(PlayerOne.UserName, Rating);
                     PlayerOne.LoseGame(PlayerTwo.UserName,Rating);
                 }
